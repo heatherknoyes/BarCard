@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS barcard_db;
+CREATE DATABASE barcard_db;
