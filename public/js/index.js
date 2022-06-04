@@ -1,6 +1,6 @@
 var shareRcpBtn = $('#share') // allows user to create recipes and add them to the dictionary
 var searchRcpBtn = $('#search') // allows user to search existing drink recipes
-var accountBtn = $('#account') // redirects user to the creating account page
+var accountInfoBtn = $('#account') // user can view their account info here
 
 var submitButtonEl = $('#submit') // allows user to submit a comment
 var userCommentEl = $('#comment') // 
