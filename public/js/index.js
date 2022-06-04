@@ -1,13 +1,13 @@
-var shareRcpBtn = $('#share')
-var searchRcpBtn = $('#search')
-var accountBtn = $('#account')
+var shareRcpBtn = $('#share') // allows user to create recipes and add them to the dictionary
+var searchRcpBtn = $('#search') // allows user to search existing drink recipes
+var accountBtn = $('#account') // redirects user to the creating account page
 
-var submitButtonEl = $('#submit')
-var userCommentEl = $('#comment')
-var starEl = $('#star')
-var reviewEl = $('#review')
-var nthComment = 1;
-var starRating = 0;
+var submitButtonEl = $('#submit') // allows user to submit a comment
+var userCommentEl = $('#comment') // 
+var starEl = $('#star') // font awesome clickable stars
+var reviewEl = $('#review') // element to append reviews to the body of the review page
+var nthComment = 1; // increment for each new comment
+var starRating = 0; // star ratings out of 5
 
 function shareRecipe() {}
 
