@@ -1,5 +1,6 @@
 var shareRcpBtn = $('#share') // allows user to create recipes and add them to the dictionary
 var searchRcpBtn = $('#search') // allows user to search existing drink recipes
+var searchTextEl = $('#text') // the users entered text (desired drink search)
 var accountInfoBtn = $('#account') // user can view their account info here
 
 var submitButtonEl = $('#submit') // allows user to submit a comment
@@ -11,7 +12,17 @@ var starRating = 0; // star ratings out of 5
 
 function shareRecipe() {}
 
-function searchRecipe() {}
+async function searchRecipe(userSearch) { // clarify route, variables, endpoint names
+   const result = await fetch('/api/searchrecipe', {
+       method: 'POST',
+       body: JSON.stringify({userSearch}),
+       headers: { 'Content-Type': 'application/json' },
+
+    });
+    console.log(result);
+
+}
+
 
 function accountInfo() {}
 
@@ -76,5 +87,10 @@ $("#submit").on("click", function() {
    } else {
       window.alert('One of the fields you have entered is blank. You must submit a comment and leave a star rating.');   
    }
+})
+
+$("#search").on("click", function() {
+    var userSearch = $("#text").val();
+    searchRecipe(userSearch); // if you want to save previous searches per user, then use DB here.
 })
  
