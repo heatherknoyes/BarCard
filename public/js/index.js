@@ -1,4 +1,4 @@
-var shareRcpBtn = $('#share') // allows user to create recipes and add them to the dictionary
+var createRcpBtn = $('#create') // allows user to create recipes and add them to the dictionary
 var searchRcpBtn = $('#search') // allows user to search existing drink recipes
 var searchTextEl = $('#text') // the users entered text (desired drink search)
 var accountInfoBtn = $('#account') // user can view their account info here
@@ -10,7 +10,24 @@ var reviewEl = $('#review') // element to append reviews to the body of the revi
 var nthComment = 1; // increment for each new comment
 var starRating = 0; // star ratings out of 5
 
-function shareRecipe() {}
+async function createRecipe() { // with a pop-up modal, the users inputs into each field saves for each descriptor of the drink
+    var drink_name = ''; // the id names here come from the modal values
+    var drink_description = '';
+    var drink_recipe = '';
+
+    const result = await fetch('/api/searchrecipe', {
+        method: 'POST',
+        body: JSON.stringify({drink_name, drink_description, drink_recipe}),
+        headers: { 'Content-Type': 'application/json' },
+     });
+}
+
+async function displayRecipes() {
+    const result = await fetch('/api/searchrecipe', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+     });
+}
 
 async function searchRecipe(userSearch) { // clarify route, variables, endpoint names
    const result = await fetch('/api/searchrecipe', {
@@ -20,13 +37,14 @@ async function searchRecipe(userSearch) { // clarify route, variables, endpoint 
 
     });
     console.log(result);
-
 }
 
 
-function accountInfo() {}
+function accountInfo() {
+    // based on the user id saved in the database, you present the info of that user.
+}
 
- 
+
 function showComment() {
    var reviews = JSON.parse(window.localStorage.getItem('reviews')) || []
    reviews.forEach(function (comment) {
@@ -91,6 +109,9 @@ $("#submit").on("click", function() {
 
 $("#search").on("click", function() {
     var userSearch = $("#text").val();
-    searchRecipe(userSearch); // if you want to save previous searches per user, then use DB here.
+    searchRecipe(userSearch); // if you want to save previous searches per user accounts, then use DB here.
 })
- 
+
+$("#create").on("click", function() {
+    createRecipe();
+})
