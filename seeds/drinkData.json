@@ -1,0 +1,17 @@
+[
+  {
+    "drink_name": "Tropicalia",
+    "instructions": "Shake it",
+    "is_alcoholic": true
+  },
+  {
+    "drink_name": "Martini",
+    "instructions": "Mix it",
+    "is_alcoholic": true
+  },
+  {
+    "drink_name": "Orange Juice",
+    "instructions": "Stir it",
+    "is_alcoholic": false
+  }
+]

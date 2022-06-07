@@ -1,8 +1,9 @@
-const sequelize = require('../config/connection');
-const { User, Project } = require('../models');
+const sequelize = require("../config/connection");
+const { User, Drink, Review } = require("../models");
 
-const userData = require('./userData.json');
-const projectData = require('./projectData.json');
+const drinkData = require("./drinkData.json");
+const userData = require("./userData.json");
+const reviewData = require("./reviewData.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,10 +13,20 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
+  for (const drink of drinkData) {
+    await Drink.create({
+      ...drink,
       user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+
+  const drinks = await Drink.findAll();
+
+  for (const review of reviewData) {
+    await Review.create({
+      ...review,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+      drink_id: drinks[Math.floor(Math.random() * drinks.length)].dataValues.id,
     });
   }
 
