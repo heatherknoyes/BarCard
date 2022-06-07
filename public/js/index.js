@@ -29,6 +29,7 @@ async function displayRecipes() {
      });
 }
 
+
 async function searchRecipe(userSearch) { // clarify route, variables, endpoint names
    const result = await fetch('/api/searchrecipe', {
        method: 'POST',
@@ -110,6 +111,7 @@ $("#submit").on("click", function() {
 $("#search").on("click", function() {
     var userSearch = $("#text").val();
     searchRecipe(userSearch); // if you want to save previous searches per user accounts, then use DB here.
+    displayRecipes();
 })
 
 $("#create").on("click", function() {
