@@ -1,14 +1,20 @@
-var createRcpBtn = $('#create') // allows user to create recipes and add them to the dictionary
-var searchRcpBtn = $('#search') // allows user to search existing drink recipes
-var searchTextEl = $('#text') // the users entered text (desired drink search)
-var accountInfoBtn = $('#account') // user can view their account info here
+var createRcpBtn = $('.create') // allows user to create recipes and add them to the dictionary
+var searchRcpBtn = $('.search') // allows user to search existing drink recipes
+var searchTextEl = $('.text') // the users entered text (desired drink search)
+var accountInfoBtn = $('.account') // user can view their account info here
+var submittedRecipesBtn = $('.submitted-recipes') // user views their submitted recipes
+var searchHistoryBtn = $('.search-history') // allows user to view their search history
+var favoriteDrinksBtn = $('.favorite-drinks') // allows user to view their favorite drinks
 
-var submitButtonEl = $('#submit') // allows user to submit a comment
-var userCommentEl = $('#comment') // 
-var starEl = $('#star') // font awesome clickable stars
-var reviewEl = $('#review') // element to append reviews to the body of the review page
+var submitButtonEl = $('.submit') // allows user to submit a comment
+var userCommentEl = $('.comment') // 
+var starEl = $('.star') // font awesome clickable stars
+var reviewEl = $('.review') // element to append reviews to the body of the review page
 var nthComment = 1; // increment for each new comment
 var starRating = 0; // star ratings out of 5
+
+
+// Recipe Functions (lines 1-7)
 
 async function createRecipe() { // with a pop-up modal, the users inputs into each field saves for each descriptor of the drink
     var drink_name = ''; // the id names here come from the modal values
@@ -29,7 +35,6 @@ async function displayRecipes() {
      });
 }
 
-
 async function searchRecipe(userSearch) { // clarify route, variables, endpoint names
    const result = await fetch('/api/searchrecipe', {
        method: 'POST',
@@ -40,11 +45,17 @@ async function searchRecipe(userSearch) { // clarify route, variables, endpoint 
     console.log(result);
 }
 
-
 function accountInfo() {
     // based on the user id saved in the database, you present the info of that user.
 }
 
+function viewSubmittedRecipes() {}
+
+function viewSearchHistory() {}
+
+function viewFavorites() {}
+
+// Rating and Review Functions (9-14)
 
 function showComment() {
    var reviews = JSON.parse(window.localStorage.getItem('reviews')) || []
@@ -89,7 +100,7 @@ $('.fa').on('click', function () {
    return starRating;
 })
  
-$("#submit").on("click", function() {
+$(".submit").on("click", function() {
    var userText = $("#comment").val();
    var userStar = starRating; 
    
@@ -108,12 +119,17 @@ $("#submit").on("click", function() {
    }
 })
 
-$("#search").on("click", function() {
+$(".search").on("click", function() {
     var userSearch = $("#text").val();
     searchRecipe(userSearch); // if you want to save previous searches per user accounts, then use DB here.
     displayRecipes();
 })
 
-$("#create").on("click", function() {
+$(".create").on("click", function() {
     createRecipe();
+})
+
+$(".account").on("click", function() {
+
+    accountInfo();
 })
