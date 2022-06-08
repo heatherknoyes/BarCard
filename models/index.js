@@ -1,6 +1,7 @@
 const User = require("./User");
 const Drink = require("./Drink");
 const Review = require("./Review");
+const Liquid = require("./Liquid");
 
 User.hasMany(Drink, {
   foreignKey: "userId",
@@ -17,4 +18,4 @@ Drink.hasMany(Review, {
   onDelete: "CASCADE",
 });
 
-module.exports = { User, Drink, Review };
+module.exports = { User, Drink, Review, Liquid };
