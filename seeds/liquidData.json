@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Vodka",
+    "serving_size_oz": 2,
+    "is_alcohol": true 
+  },
+  {
+    "name": "Orange Juice",
+    "serving_size_oz": 6,
+    "is_alcohol": false
+  },
+  {
+    "name": "Bacardi",
+    "serving_size_oz": 2,
+    "is_alcohol": true
+  },
+  {
+    "name": "Coca-Cola",
+    "serving_size_oz": 4,
+    "is_alcohol": false
+  }
+]
