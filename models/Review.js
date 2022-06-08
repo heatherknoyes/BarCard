@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Drink extends Model {}
+class Review extends Model {}
 
-Drink.init(
+Review.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,17 +11,20 @@ Drink.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    drink_name: {
+    stars: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    comment: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    instructions: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    is_alcoholic: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
+    drink_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "drink",
+        key: "id",
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -36,8 +39,8 @@ Drink.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "drink",
+    modelName: "review",
   }
 );
 
-module.exports = Drink;
+module.exports = Review;
