@@ -1,6 +1,6 @@
 var createRcpBtn = $('#create') // allows user to create recipes and add them to the dictionary
 var searchRcpBtn = $('#search') // allows user to search existing drink recipes
-var searchTextEl = $('#text') // the users entered text (desired drink search)
+var searchTextEl = $('.text') // the users entered text (desired drink search)
 var accountInfoBtn = $('#account') // user can view their account info here
 
 var submitButtonEl = $('#submit') // allows user to submit a comment
@@ -29,7 +29,6 @@ async function displayRecipes() {
      });
 }
 
-
 async function searchRecipe(userSearch) { // clarify route, variables, endpoint names
    const result = await fetch('/api/searchrecipe', {
        method: 'POST',
@@ -40,11 +39,9 @@ async function searchRecipe(userSearch) { // clarify route, variables, endpoint 
     console.log(result);
 }
 
-
 function accountInfo() {
     // based on the user id saved in the database, you present the info of that user.
 }
-
 
 function showComment() {
    var reviews = JSON.parse(window.localStorage.getItem('reviews')) || []
@@ -116,4 +113,9 @@ $("#search").on("click", function() {
 
 $("#create").on("click", function() {
     createRecipe();
+})
+
+$("#account").on("click", function() {
+
+    accountInfo();
 })
