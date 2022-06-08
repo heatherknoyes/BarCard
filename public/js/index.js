@@ -37,8 +37,7 @@ async function displayRecipes() {
 
 async function searchRecipe(userSearch) { // clarify route, variables, endpoint names
    const result = await fetch('/api/searchrecipe', {
-       method: 'POST',
-       body: JSON.stringify({userSearch}),
+       method: 'GET',
        headers: { 'Content-Type': 'application/json' },
 
     });
@@ -49,11 +48,30 @@ function accountInfo() {
     // based on the user id saved in the database, you present the info of that user.
 }
 
-function viewSubmittedRecipes() {}
+async function viewSubmittedRecipes() {
+    const result = await fetch('/api/submitrecipe', {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'},
+    });
+    console.log(result);
 
-function viewSearchHistory() {}
+}
 
-function viewFavorites() {}
+async function viewSearchHistory() {
+    const result = await fetch('api/searchhistory', {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'},
+    });
+    console.log(result);
+}
+
+async function viewFavorites() {
+    const result = await fetch('api/favorites', {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'},
+    });
+    console.log(result);
+}
 
 // Rating and Review Functions (9-14)
 
