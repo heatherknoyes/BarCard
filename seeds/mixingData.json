@@ -1,0 +1,18 @@
+[
+  {
+    "drink_id": 1,
+    "liquid_id": 1
+  },
+  {
+    "drink_id": 1,
+    "liquid_id": 2
+  },
+  {
+    "drink_id": 2,
+    "liquid_id": 4
+  },
+  {
+    "drink_id": 3,
+    "liquid_id": 3
+  }
+]
