@@ -1,5 +1,6 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
+  console.log("Hello world");
 
   // Collect values from the login form
   const email = document.querySelector("#email-login").value.trim();
@@ -48,6 +49,7 @@ document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);
 
-document
-  .querySelector(".signup-form")
-  .addEventListener("submit", signupFormHandler);
+// document
+//   .querySelector(".signup-form")
+//   .addEventListener("submit", signupFormHandler);
+

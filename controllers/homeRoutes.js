@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const withAuth = require("../utils/auth.js")
 // This is the 'get' route
 // router.get("/frontpage", async (req, res) => {
 //   // Here, frontpage.html is rendered
@@ -22,7 +23,7 @@ router.get("/login", (req, res) => {
   }
 });
 
-router.get("/dashboard", (req, res) => {
+router.get("/dashboard", withAuth, (req, res) => {
   try {
     res.render("dashboard");
   } catch (err) {
