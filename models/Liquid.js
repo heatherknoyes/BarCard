@@ -13,6 +13,7 @@ Liquid.init(
     },
     name: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
     },
     serving_size_oz: {
