@@ -7,8 +7,16 @@ const router = require("express").Router();
 
 router.get("/", (req, res) => {
   try {
+    // res.render("frontpage", { logged_in: req.session.logged_in });
     res.render("frontpage");
-    // res.sendFile(path.join(__dirname, "../public/html/mainpage.html"));
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/account", (req, res) => {
+  try {
+    res.render("account");
   } catch (err) {
     res.status(500).json(err);
   }
