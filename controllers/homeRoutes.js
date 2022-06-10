@@ -22,6 +22,30 @@ router.get("/account", (req, res) => {
   }
 });
 
+router.get("/newrecipe", (req, res) => {
+  try {
+    res.render("newrecipe");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/newingredient", (req, res) => {
+  try {
+    res.render("newingredient");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/search", (req, res) => {
+  try {
+    res.render("search");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/login", (req, res) => {
   try {
     res.render("login");

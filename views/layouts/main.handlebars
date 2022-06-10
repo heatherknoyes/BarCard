@@ -29,11 +29,11 @@
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
         {{!-- {{#if logged_in}} --}}
-          <a class="nav-link fw-bold py-1 px-0" href="#">Search</a>
+          <a class="nav-link fw-bold py-1 px-0" href="/search">Search</a>
           <a class="nav-link fw-bold py-1 px-0" href="/account">Account</a>
-          <a class="nav-link fw-bold py-1 px-0" href="#">New Recipe</a>
-          <a class="nav-link fw-bold py-1 px-0" href="#">New Ingredient</a>
-          <a class="nav-link fw-bold py-1 px-0" href="#">Logout</a>
+          <a class="nav-link fw-bold py-1 px-0" href="/newrecipe">New Recipe</a>
+          <a class="nav-link fw-bold py-1 px-0" href="/newingredient">New Ingredient</a>
+          <a class="nav-link fw-bold py-1 px-0" id="logout" href="">Logout</a>
         {{!-- {{/if}} --}}
       </nav>
     </header>
@@ -59,4 +59,5 @@
   <script src="/js/logout.js"></script>
 {{/if}} --}}
 </html>
+<script src="/js/logout.js"></script>
 
