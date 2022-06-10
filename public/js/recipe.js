@@ -1,8 +1,6 @@
 var createRcpBtn = $('.create') // allows user to create recipes and add them to the dictionary
 var searchRcpBtn = $('.search') // allows user to search existing drink recipes
 var searchTextEl = $('.text') // the users entered text (desired drink search)
-var submittedRecipesBtn = $('.submitted-recipes') // user views their submitted recipes
-
 
 // Recipe Functions (lines 1-7)
 
@@ -35,23 +33,12 @@ async function searchRecipe(userSearch) { // clarify route, variables, endpoint 
     console.log(result);
 }
 
-async function viewSubmittedRecipes() {
-    const result = await fetch('/api/submitrecipe', {
-       method: 'GET',
-       headers: { 'Content-Type': 'application/json' },
-    });
- }
- 
- async function viewSearchHistory() {
-    const result = await fetch('/api/searchhistory', {
-       method: 'GET',
-       headers: { 'Content-Type': 'application/json' },
-    });
- }
- 
- async function viewFavorites() {
-    const result = await fetch('/api/favorites', {
-       method: 'GET',
-       headers: { 'Content-Type': 'application/json' },
-    });
- }
+$(".search").on("click", function() {
+    var userSearch = $("#text").val();
+    searchRecipe(userSearch); // if you want to save previous searches per user accounts, then use DB here.
+    displayRecipes();
+})
+
+$(".create").on("click", function() {
+    createRecipe();
+})
