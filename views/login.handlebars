@@ -20,18 +20,35 @@
     <label for="password-login">Password</label>
   </div>
 
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me" /> Remember me
-    </label>
-  </div>
-
-  <div>
-    <span class="psw">Need an <a href="#">account?</a></span>
-  </div>
-
-  <button class="login-form w-100 btn btn-lg btn-primary login-form" type="submit" id="">
+  <button class="login-form w-100 btn btn-lg btn-primary" type="button" id="login-button">
     Sign in
+  </button>
+</form>
+
+<form class="form-signup w-100 m-auto">
+  <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+
+  <div class="form-floating">
+    <input
+      type="email"
+      class="form-control"
+      id="email-signup"
+      placeholder="name@example.com"
+    />
+    <label for="email-signup">Email address</label>
+  </div>
+  <div class="form-floating">
+    <input
+      type="password"
+      class="form-control"
+      id="password-signup"
+      placeholder="Password"
+    />
+    <label for="password-signup">Password</label>
+  </div>
+
+  <button class="login-form w-100 btn btn-lg btn-primary" type="button" id="signup-button">
+    Sign up
   </button>
 </form>
 <script src="/js/login.js"></script>

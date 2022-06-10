@@ -1,9 +1,9 @@
 const router = require("express").Router();
+const withAuth = require("../utils/auth.js");
 
 router.get("/", (req, res) => {
   try {
-    // res.render("frontpage", { logged_in: req.session.logged_in });
-    res.render("frontpage");
+    res.render("frontpage", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 
 router.get("/account", (req, res) => {
   try {
-    res.render("account");
+    res.render("account", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -19,7 +19,7 @@ router.get("/account", (req, res) => {
 
 router.get("/newrecipe", (req, res) => {
   try {
-    res.render("newrecipe");
+    res.render("newrecipe", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -27,7 +27,7 @@ router.get("/newrecipe", (req, res) => {
 
 router.get("/newingredient", (req, res) => {
   try {
-    res.render("newingredient");
+    res.render("newingredient", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -35,7 +35,7 @@ router.get("/newingredient", (req, res) => {
 
 router.get("/search", (req, res) => {
   try {
-    res.render("search");
+    res.render("search", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
