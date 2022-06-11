@@ -3,9 +3,9 @@
   <label for="drink">Drink Name: </label>
   <input id="drink" type="text" /><br>
   <label for="liquid">Liquid: </label>
-  <select name="liquid" id="liquid_dropdown">
+  <select name="liquid" id="liquid">
     {{#each liquids as |liquid|}}
-    <option value="liquid_{{liquid.id}}">{{liquid.name}}</option>
+    <option value="{{liquid.id}}">{{liquid.name}}</option>
     {{/each}}
   </select><br>
   <label for="is_alcoholic">Contains alcohol? </label>
@@ -14,3 +14,4 @@
   <textarea id="drink_instructions"></textarea>
   <button type="button" class="btn btn-primary" id="new-recipe-button">Submit</button>
 </div>
+<script src="/js/drink.js"></script>

@@ -3,20 +3,26 @@ const newRecipeHandler = async (event) => {
 
   // Collect values from the login form
   const drink_name = document.querySelector("#drink").value.trim();
-  // const serving_size_oz = document.querySelector("#servingSize").value;
+  const instructions = document.querySelector("#drink_instructions").value;
+  const liquid_id = document.querySelector("#liquid").value.trim();
   const is_alcoholic = $("#is_alcoholic").is(":checked") ? "true" : "false";
 
-  if (drink_name && servingSize) {
+  if (drink_name && liquid_id && instructions) {
     // Send a POST request to the API endpoint
     const response = await fetch("/api/drinks/", {
       method: "POST",
-      body: JSON.stringify({ drink_name, is_alcoholic }),
+      body: JSON.stringify({
+        drink_name,
+        is_alcoholic,
+        liquid_id,
+        instructions,
+      }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
       // If successful, redirect the browser to the account page
-      document.location.replace("/account");
+      // document.location.replace("/account");
     } else {
       alert(response.statusText);
     }
@@ -25,4 +31,4 @@ const newRecipeHandler = async (event) => {
 
 document
   .querySelector("#new-recipe-button")
-  .addEventListener("click", newIngredientHandler);
+  .addEventListener("click", newRecipeHandler);
