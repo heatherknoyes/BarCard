@@ -22,7 +22,7 @@ const newRecipeHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the account page
-      // document.location.replace("/account");
+      document.location.replace("/account");
     } else {
       alert(response.statusText);
     }
