@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { Liquid } = require("../models");
 const withAuth = require("../utils/auth.js");
 
 router.get("/", (req, res) => {
@@ -9,7 +10,7 @@ router.get("/", (req, res) => {
   }
 });
 
-router.get("/account", (req, res) => {
+router.get("/account", withAuth, (req, res) => {
   try {
     res.render("account", { logged_in: req.session.logged_in });
   } catch (err) {
@@ -17,15 +18,24 @@ router.get("/account", (req, res) => {
   }
 });
 
-router.get("/newrecipe", (req, res) => {
+router.get("/newrecipe", withAuth, async (req, res) => {
   try {
-    res.render("newrecipe", { logged_in: req.session.logged_in });
+    const liquidData = await Liquid.findAll();
+
+    // Serialize data so the template can read it
+    const liquids = liquidData.map((liquid) => liquid.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render("newrecipe", {
+      liquids,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/newingredient", (req, res) => {
+router.get("/newingredient", withAuth, (req, res) => {
   try {
     res.render("newingredient", { logged_in: req.session.logged_in });
   } catch (err) {
@@ -35,7 +45,7 @@ router.get("/newingredient", (req, res) => {
 
 router.get("/search", (req, res) => {
   try {
-    res.render("search", { logged_in: req.session.logged_in });
+    res.render("search");
   } catch (err) {
     res.status(500).json(err);
   }

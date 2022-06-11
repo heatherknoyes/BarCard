@@ -1,5 +1,16 @@
-<div class="barCard-body-box">
-  <h6>Create Recipe Here</h6>
-  <textarea name="" id="" cols="60" rows="3" placeholder="Add recipes here."></textarea>
-  <input class="submit" type="submit" />
+<div class="recipe-form">
+  <h6>Submit New Drink Recipe Here</h6>
+  <label for="drink">Drink Name: </label>
+  <input id="drink" type="text" /><br>
+  <label for="liquid">Liquid: </label>
+  <select name="liquid" id="liquid_dropdown">
+    {{#each liquids as |liquid|}}
+    <option value="liquid_{{liquid.id}}">{{liquid.name}}</option>
+    {{/each}}
+  </select><br>
+  <label for="is_alcoholic">Contains alcohol? </label>
+  <input type="checkbox" id="is_alcoholic" name="is_alcoholic" value="is_alcoholic"><br>
+  <label for="drink_instructions">Recipe Instructions: </label>
+  <textarea id="drink_instructions"></textarea>
+  <button type="button" class="btn btn-primary" id="new-recipe-button">Submit</button>
 </div>
