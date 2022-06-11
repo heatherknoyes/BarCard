@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const { Liquid } = require("../models");
+const { Liquid, Drink, User } = require("../models");
 const withAuth = require("../utils/auth.js");
+const format_date = require("../utils/helpers.js");
 
 router.get("/", (req, res) => {
   try {
@@ -43,9 +44,24 @@ router.get("/newingredient", withAuth, (req, res) => {
   }
 });
 
-router.get("/search", (req, res) => {
+router.get("/search", async (req, res) => {
   try {
-    res.render("search");
+    const recipeData = await Drink.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const recipes = recipeData.map((drink) => drink.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render("search", {
+      recipes,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
