@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const { Liquid, Drink } = require("../../models");
+const { Liquid, Drink, Mixing } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body);
-    const { drink_name, instructions, is_alcoholic } = req.body;
+    let mixData;
+    const { drink_name, instructions, is_alcoholic, liquid_id } = req.body;
     const drinkData = await Drink.create({
       drink_name,
       instructions,
@@ -12,7 +12,14 @@ router.post("/", async (req, res) => {
       userId: req.session.user_id,
     });
 
-    res.status(200).json(drinkData);
+    if (drinkData) {
+      mixData = await Mixing.create({
+        drink_id: drinkData.dataValues.id,
+        liquid_id,
+      });
+    }
+
+    res.status(200).json({ drinkData, mixData });
   } catch (err) {
     res.status(400).json(err);
   }

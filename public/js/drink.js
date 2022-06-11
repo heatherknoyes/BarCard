@@ -3,7 +3,7 @@ const newRecipeHandler = async (event) => {
 
   // Collect values from the login form
   const drink_name = document.querySelector("#drink").value.trim();
-  const instructions = document.querySelector("#drink_instructions").value();
+  const instructions = document.querySelector("#drink_instructions").value;
   const liquid_id = document.querySelector("#liquid").value.trim();
   const is_alcoholic = $("#is_alcoholic").is(":checked") ? "true" : "false";
 
