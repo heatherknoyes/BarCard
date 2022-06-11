@@ -1,5 +1,7 @@
 const router = require("express").Router();
+const { Liquid, Drink, User } = require("../models");
 const withAuth = require("../utils/auth.js");
+const format_date = require("../utils/helpers.js");
 
 router.get("/", (req, res) => {
   try {
@@ -9,7 +11,7 @@ router.get("/", (req, res) => {
   }
 });
 
-router.get("/account", (req, res) => {
+router.get("/account", withAuth, (req, res) => {
   try {
     res.render("account", { logged_in: req.session.logged_in });
   } catch (err) {
@@ -17,15 +19,24 @@ router.get("/account", (req, res) => {
   }
 });
 
-router.get("/newrecipe", (req, res) => {
+router.get("/newrecipe", withAuth, async (req, res) => {
   try {
-    res.render("newrecipe", { logged_in: req.session.logged_in });
+    const liquidData = await Liquid.findAll();
+
+    // Serialize data so the template can read it
+    const liquids = liquidData.map((liquid) => liquid.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render("newrecipe", {
+      liquids,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/newingredient", (req, res) => {
+router.get("/newingredient", withAuth, (req, res) => {
   try {
     res.render("newingredient", { logged_in: req.session.logged_in });
   } catch (err) {
@@ -33,9 +44,24 @@ router.get("/newingredient", (req, res) => {
   }
 });
 
-router.get("/search", (req, res) => {
+router.get("/search", async (req, res) => {
   try {
-    res.render("search", { logged_in: req.session.logged_in });
+    const recipeData = await Drink.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const recipes = recipeData.map((drink) => drink.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render("search", {
+      recipes,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
