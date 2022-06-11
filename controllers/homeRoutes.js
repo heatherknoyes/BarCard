@@ -44,7 +44,7 @@ router.get("/newingredient", withAuth, (req, res) => {
   }
 });
 
-router.get("/search", async (req, res) => {
+router.get("/search", withAuth, async (req, res) => {
   try {
     const recipeData = await Drink.findAll({
       include: [
@@ -59,9 +59,7 @@ router.get("/search", async (req, res) => {
     const recipes = recipeData.map((drink) => drink.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render("search", {
-      recipes,
-    });
+    res.render("search", { recipes, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -69,6 +67,21 @@ router.get("/search", async (req, res) => {
 
 router.get("/login", (req, res) => {
   try {
+    res.render("login");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/logout", (req, res) => {
+  try {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
     res.render("login");
   } catch (err) {
     res.status(500).json(err);

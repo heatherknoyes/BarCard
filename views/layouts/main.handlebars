@@ -14,19 +14,44 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <nav class="navbar bg-light">
+    <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
       <div class="container-fluid">
-        <a class="navbar-brand mb-0 h1" href="/">BarCard</a>
-        {{!-- <a class="nav-link fw-bold py-1 px-0" href="/">Contact</a> --}}
-        {{#if logged_in}}
-          <a class="nav-link fw-bold py-1 px-0" href="/search">Search</a>
-          <a class="nav-link fw-bold py-1 px-0" href="/account">Account</a>
-          <a class="nav-link fw-bold py-1 px-0" href="/newrecipe">New Recipe</a>
-          <a class="nav-link fw-bold py-1 px-0" href="/newingredient">New Ingredient</a>
-          <a class="nav-link fw-bold py-1 px-0" id="logout" href="">Logout</a>
-        {{else}}
-          <a class="nav-link fw-bold py-1 px-0" href="/login">Login</a>  
-        {{/if}}
+        <a class="navbar-brand" href="/">BarCard</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample01">
+          <ul class="navbar-nav me-auto mb-2">
+            {{#if logged_in}}
+            <li class="nav-item">
+              <a class="nav-link active text-right" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/search">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/account">Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/newrecipe">New Recipe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/newingredient">New Ingredient</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            {{/if}}
+          </ul>
+          {{!-- <form role="search">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          </form> --}}
+        </div>
       </div>
     </nav>
     <main>
