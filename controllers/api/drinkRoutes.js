@@ -4,8 +4,12 @@ const { Liquid, Drink } = require("../../models");
 router.post("/", async (req, res) => {
   try {
     console.log(req.body);
+    const { drink_name, instructions, is_alcoholic } = req.body;
     const drinkData = await Drink.create({
-      ...req.body,
+      drink_name,
+      instructions,
+      is_alcoholic,
+      userId: req.session.user_id,
     });
 
     res.status(200).json(drinkData);
@@ -25,15 +29,5 @@ router.post("/ingredient", async (req, res) => {
     res.status(400).json(err);
   }
 });
-
-// router.get("/ingredient", async (req, res) => {
-//   try {
-//     const liquidData = await Liquid.findAll();
-
-//     res.status(200).json(liquidData);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
 
 module.exports = router;
