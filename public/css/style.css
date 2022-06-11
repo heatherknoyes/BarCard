@@ -75,7 +75,7 @@
   
   body {
     background: linear-gradient( 50deg, var(--bs-indigo), black, black, var(--bs-danger));
-    background-size: 500% 500%;
+    background-size: 1000% 100vw;
     animation: gradient 15s ease infinite;
   }
 
