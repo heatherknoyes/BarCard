@@ -1,17 +1,38 @@
-<div class="ingredient-form">
-  <h6>Submit New Ingredient Here</h6>
-  <label for="liquid">Liquid Name: </label>
-  <input id="liquid" type="text" /><br>
-  <label for="servingSize">Serving Size: </label>
-  <select name="servingSize" id="servingSize">
-    <option value="1">1 oz</option>
-    <option value="2">2 oz</option>
-    <option value="4">4 oz</option>
-    <option value="6">6 oz</option>
-    <option value="8">8 oz</option>
-  </select><br>
-  <label for="is_alcohol">Is alcohol? </label>
-  <input type="checkbox" id="is_alcohol" name="is_alcohol" value="is_alcohol"><br>
-  <button type="button" class="btn btn-primary" id="new-ingredient-button">Submit</button>
+<div class="container vh-100">
+  <div class="text-center h-25">
+    <h1>New Ingredient</h1>
+  </div>
+  <div class="row align-items-center justify-content-center h-25">
+    <div class="ingredient-form w-auto d-flex flex-wrap flex-column">
+      <div>
+        <label for="liquid">Liquid Name: </label>
+        <input id="liquid" type="text" /><br />
+      </div>
+      <label for="servingSize">Serving Size: </label>
+      <select name="servingSize" id="servingSize" class="w-25">
+        <option value="1">1 oz</option>
+        <option value="2">2 oz</option>
+        <option value="4">4 oz</option>
+        <option value="6">6 oz</option>
+        <option value="8">8 oz</option>
+      </select><br />
+      <div>
+        <label for="is_alcohol">Is alcohol? </label>
+        <input
+          type="checkbox"
+          id="is_alcohol"
+          name="is_alcohol"
+          value="is_alcohol"
+        /><br />
+      </div>
+      <div class="d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="new-ingredient-button"
+        >Submit</button>
+      </div>
+    </div>
+  </div>
 </div>
 <script src="/js/ingredient.js"></script>
