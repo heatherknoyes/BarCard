@@ -3,7 +3,6 @@ var searchHistoryBtn = $('.search-history') // allows user to view their search 
 var favoriteDrinksBtn = $('.favorite-drinks') // allows user to view their favorite drinks
 var submittedRecipesBtn = $('.submitted-recipes') // user views their submitted recipes
 
-
 async function viewSubmittedRecipes() {
     const result = await fetch('/api/submitrecipe', {
        method: 'GET',
@@ -25,7 +24,6 @@ async function viewSubmittedRecipes() {
     });
  }
 
-
 function deleteRecipes() {}
 
 function updateRecipes() {}
@@ -35,6 +33,5 @@ function accountInfo() {
 }
 
 $(".account").on("click", function() {
-
     accountInfo();
 })
