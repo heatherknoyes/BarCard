@@ -2,12 +2,13 @@
   <h6>Submit New Drink Recipe Here</h6>
   <label for="drink">Drink Name: </label>
   <input id="drink" type="text" /><br>
-  <label for="liquid">Liquid: </label>
-  <select name="liquid" id="liquid">
+  <a href="/newingredient">Need another liquid?</a><br>
+  <label for="liquid">Liquid: </label><br>
     {{#each liquids as |liquid|}}
-    <option value="{{liquid.id}}">{{liquid.name}}</option>
+      <label for="liquid_{{liquid.id}}">{{liquid.name}}</label>
+      <input type="checkbox" class="liquid-list" id="{{liquid.id}}" name="liquid_{{liquid.id}}" value="{{liquid.name}}"><br>
     {{/each}}
-  </select><br>
+  {{!-- <button type="button" class="btn btn-primary" id="add-ingredients-button">Add Ingredients</button> --}}
   <label for="is_alcoholic">Contains alcohol? </label>
   <input type="checkbox" id="is_alcoholic" name="is_alcoholic" value="is_alcoholic"><br>
   <label for="drink_instructions">Recipe Instructions: </label>
