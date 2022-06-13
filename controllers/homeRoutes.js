@@ -11,9 +11,25 @@ router.get("/", (req, res) => {
   }
 });
 
-router.get("/account", withAuth, (req, res) => {
+router.get("/account", withAuth, async (req, res) => {
   try {
-    res.render("account", { logged_in: req.session.logged_in });
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Drink }],
+    });
+
+    if (userData.drinks.length !== 0) {
+      const recipes = userData.drinks.map((drink) =>
+        drink.get({ plain: true })
+      );
+      res.render("account", {
+        recipes,
+      });
+    } else {
+      res.render("account", {
+        username: userData.dataValues.username,
+      });
+    }
   } catch (err) {
     res.status(500).json(err);
   }
