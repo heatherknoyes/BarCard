@@ -24,6 +24,11 @@ Drink.hasMany(Mixing, {
   onDelete: "CASCADE",
 });
 
+Drink.belongsTo(User, {
+  foreignKey: "userId",
+  onDelete: "CASCADE",
+});
+
 Liquid.hasMany(Mixing, {
   foreignKey: "liquidId",
   onDelete: "CASCADE",

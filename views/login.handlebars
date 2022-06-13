@@ -1,47 +1,58 @@
-<main class="form-signin w-100 m-auto">
-  <form>
-    <img
-      class="mb-4"
-      src="../images/istockphoto-1284679878-170667a (2).jpg"
-      alt=""
-      width="72"
-      height="57"
-    />
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+<div class="container vh-100">
+  <div class="row align-content-stretch align-items-center vh-100">
+    <form class="form-signin form-styling col-xs-12 col-md-6">
+      <h1 class="h3 mb-3 fw-normal text-center">Log In</h1>
 
-    <div class="form-floating">
-      <input
-        type="email"
-        class="form-control"
-        id="email-login"
-        placeholder="name@example.com"
-      />
-      <label for="email-login">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input
-        type="password"
-        class="form-control"
-        id="password-login"
-        placeholder="Password"
-      />
-      <label for="password-login">Password</label>
-    </div>
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="email-login"
+          placeholder="name@example.com"
+        />
+        <label for="email-login" class="text-black">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="password-login"
+          placeholder="Password"
+        />
+        <label for="password-login" class="text-black">Password</label>
+      </div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me" /> Remember me
-      </label>
-    </div>
+      <button class="login-form w-100 btn btn-lg btn-primary mt-3" type="button" id="login-button">
+        Log in
+      </button>
+    </form>
 
-    <div>
-      <span class="psw">Need an <a href="#">account?</a></span>
-    </div>
+    <form class="form-signup form-styling col-xs-12 col-md-6">
+      <h1 class="h3 mb-3 fw-normal text-center">Sign up</h1>
 
-    <button class="login-form w-100 btn btn-lg btn-primary" type="submit" id="">
-      Sign in
-    </button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-  </form>
-</main>
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="email-signup"
+          placeholder="name@example.com"
+        />
+        <label for="email-signup" class="text-black">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="password-signup"
+          placeholder="Password"
+        />
+        <label for="password-signup" class="text-black">Password</label>
+      </div>
+
+      <button class="login-form w-100 btn btn-lg btn-primary mt-3" type="button" id="signup-button">
+        Sign up
+      </button>
+    </form>
+  </div>
+</div>
 <script src="/js/login.js"></script>
