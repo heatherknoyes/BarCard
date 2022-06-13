@@ -3,8 +3,11 @@ const { Liquid, Drink, Mixing } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
-    let mixData;
-    const { drink_name, instructions, is_alcoholic, liquid_id } = req.body;
+    const { drink_name, instructions, is_alcoholic, liquid_ids } = req.body;
+    if (liquid_ids.length === 0) {
+      throw new Error("Must select a drink type");
+    }
+
     const drinkData = await Drink.create({
       drink_name,
       instructions,
@@ -13,13 +16,15 @@ router.post("/", async (req, res) => {
     });
 
     if (drinkData) {
-      mixData = await Mixing.create({
-        drink_id: drinkData.dataValues.id,
-        liquid_id,
+      liquid_ids.forEach(async (liquid_id) => {
+        await Mixing.create({
+          drink_id: drinkData.dataValues.id,
+          liquid_id,
+        });
       });
     }
 
-    res.status(200).json({ drinkData, mixData });
+    res.status(200).json({ drinkData });
   } catch (err) {
     res.status(400).json(err);
   }

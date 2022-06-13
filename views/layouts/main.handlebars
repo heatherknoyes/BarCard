@@ -36,49 +36,36 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExample01">
-          <ul class="navbar-nav me-auto mb-2">
+          <ul class="navbar-nav me-auto mb-2 align-items-end">
             {{#if logged_in}}
-              <li class="nav-item">
-                <a
-                  class="nav-link active text-right"
-                  aria-current="page"
-                  href="/"
-                >Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/search">Search</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/account">Account</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/newrecipe">New Recipe</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/newingredient">New Ingredient</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/search">All Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/account">Your Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/newrecipe">New Recipe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/newingredient">New Ingredient</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
             {{else}}
               <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
               </li>
             {{/if}}
           </ul>
-          {{! <form role="search">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-          </form> }}
         </div>
       </div>
     </nav>
-    <main>
+    <main class="text-white">
       {{{body}}}
     </main>
   </body>
-  {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-  {{/if}}
 </html>
 <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
