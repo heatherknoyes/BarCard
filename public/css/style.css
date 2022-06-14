@@ -76,7 +76,7 @@
   
   body {
     background: var(--indigo2);
-    font-family: 'Playfair Display', serif;
+    font-family: serif;
   }
 
   @keyframes gradient {
@@ -101,7 +101,7 @@
   background-image: url("../images/BarCard-planet.jpg");
   background-position: center;
   background-size: cover;
-  width: 100vw;
+  width: 90vw;
   box-shadow: 1px 1px 20px #14EACFFF,
 				1px 1px 40px #14EACFFF;
 	animation: anime 1s linear infinite;
