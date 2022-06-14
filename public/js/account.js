@@ -24,12 +24,23 @@ async function viewSubmittedRecipes() {
     });
  }
 
-function deleteRecipes() {}
+async function deleteRecipes() {
+    const result = await fetch('/api/deleterecipe', {
+        method: 'DELETE',
+        headers: {'Content-Type': 'application/json'},
+    });
+}
 
-function updateRecipes() {}
+function updateRecipes() {
+    const result = await fetch('/api/updaterecipe', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+    });
+}
 
 function accountInfo() {
     // based on the user id saved in the database, you present the info of that user.
+
 }
 
 $(".account").on("click", function() {

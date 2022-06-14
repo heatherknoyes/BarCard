@@ -7,8 +7,8 @@ var searchTextEl = $('.text') // the users entered text (desired drink search)
 async function createRecipe() { // with a pop-up modal, the users inputs into each field saves for each descriptor of the drink
     var drink_name = ''; // the id names here come from the modal values
     var drink_description = '';
-    var drink_recipe = '';
-
+    var drink_recipe = $('#drink_instructions').val();
+    console.log(body)
     const result = await fetch('/api/searchrecipe', {
         method: 'POST',
         body: JSON.stringify({drink_name, drink_description, drink_recipe}),
