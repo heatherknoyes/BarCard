@@ -28,6 +28,7 @@ router.get("/account", withAuth, async (req, res) => {
     } else {
       res.render("account", {
         username: userData.dataValues.username,
+        logged_in: req.session.logged_in,
       });
     }
   } catch (err) {
