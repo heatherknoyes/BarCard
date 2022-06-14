@@ -5,6 +5,8 @@
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
+    --indigo: #0063b2ff;
+    --indigo2: #195190ff;
     --bs-purple: #6f42c1;
     --bs-pink: #d63384;
     --bs-red: #b7a9aa;
@@ -74,15 +76,102 @@
   }
   
   body {
-    background: var(--bs-indigo);
+    background: var(--indigo2);
+    font-family: sans-serif, serif;
+  }
+
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
 /* Front Page */
+.frontpage-image {
+  width: 100vw;
+  height: 60vh;
+}
+
+.frontpage-features {
+  background-image: url("../images/BarCard-planet.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  box-shadow: 1px 1px 20px #14EACFFF,
+				1px 1px 40px #14EACFFF;
+	animation: anime 1s linear infinite;
+}
 
 /* Login Page */
 
 /* Account Page */
 
 /* New Ingredient Page */
+.ingredient {
+  width: 15vw;
+}
+
+.ingredient-color-animation {
+  font-size: 40px;
+  background: linear-gradient(to right,
+          white, #eedd44, #ef5350, #23D5AB);
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.ingredient-form {
+  background-color: #a2a2a1ff;
+  border-radius: 10px;
+  font-size: 18px;
+  box-shadow: 1px 1px 20px var(--bs-info),
+  1px 1px 40px var(--bs-info);
+  animation: anime 1s linear infinite;
+}
+
+.ingredient-input {
+  margin-bottom: 20px;
+}
+
+.barcard-checkbox{
+  width: 20px;
+  height: 20px;
+}
+
+.ingredient-serving-size {
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 1350px) {
+  .ingredient {
+    width: 25vw;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .ingredient {
+    width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ingredient {
+    width: 45vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .ingredient {
+    width: 75vw;
+  }
+}
 
 /* New Recipe Page */
