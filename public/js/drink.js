@@ -87,7 +87,9 @@ document
     document.location.reload();
   }
 
-  
+  $(".update_btn").on("click", updateRecipeHandler);
+
+
 
   
 
