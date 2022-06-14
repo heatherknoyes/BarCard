@@ -92,6 +92,20 @@
   }
 
 /* Front Page */
+.frontpage-image {
+  width: 100vw;
+  height: 60vh;
+}
+
+.frontpage-features {
+  background-image: url("../images/BarCard-planet.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  box-shadow: 1px 1px 20px #14EACFFF,
+				1px 1px 40px #14EACFFF;
+	animation: anime 1s linear infinite;
+}
 
 /* Login Page */
 
