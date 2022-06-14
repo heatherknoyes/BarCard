@@ -1,17 +1,39 @@
-<div class="ingredient-form">
-  <h6>Submit New Ingredient Here</h6>
-  <label for="liquid">Liquid Name: </label>
-  <input id="liquid" type="text" /><br>
-  <label for="servingSize">Serving Size: </label>
-  <select name="servingSize" id="servingSize">
-    <option value="1">1 oz</option>
-    <option value="2">2 oz</option>
-    <option value="4">4 oz</option>
-    <option value="6">6 oz</option>
-    <option value="8">8 oz</option>
-  </select><br>
-  <label for="is_alcohol">Is alcohol? </label>
-  <input type="checkbox" id="is_alcohol" name="is_alcohol" value="is_alcohol"><br>
-  <button type="button" class="btn btn-primary" id="new-ingredient-button">Submit</button>
+<div class="container vh-100 font">
+  <div class="text-center text-white h-25">
+    <h1 class="ingredient-color-animation">Drink Builder</h1>
+  </div>
+  <div class="row h-25">
+    <div class="ingredient-form d-flex flex-column align-items-center justify-content-center border border-warning ingredient-form">
+      <div class="col-xs-12 col-s-4 mb-4">
+        <label for="liquid">Liquid Name: </label>
+        <input id="liquid" type="text" />
+      </div>
+      <div class="col-xs-12 col-s-4 mb-4">
+        <label for="servingSize">Serving Size: </label>
+        <select name="servingSize" id="servingSize">
+          <option value="1">1 oz</option>
+          <option value="2">2 oz</option>
+          <option value="4">4 oz</option>
+          <option value="6">6 oz</option>
+          <option value="8">8 oz</option>
+        </select>
+        <label for="is_alcohol">Is alcohol? </label>
+        <input
+          type="checkbox"
+          id="is_alcohol"
+          name="is_alcohol"
+          value="is_alcohol"
+          class="ingredient-checkbox"
+        />
+      </div>
+      <div class="d-flex justify-content-start align-items-center col-xs-12">
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="new-ingredient-button"
+        >Submit</button>
+      </div>
+    </div>
+  </div>
 </div>
 <script src="/js/ingredient.js"></script>
