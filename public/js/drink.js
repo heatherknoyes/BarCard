@@ -29,6 +29,11 @@ const newRecipeHandler = async (event) => {
   }
 };
 
+const viewRecipeHandler = async (event) => {
+  console.log("hit a button");
+  document.location.replace("/account");
+};
+
 function getLiquidIds() {
   const liquidList = document.getElementsByClassName("liquid-list");
   const liquid_ids = [];
@@ -43,3 +48,7 @@ function getLiquidIds() {
 document
   .querySelector("#new-recipe-button")
   .addEventListener("click", newRecipeHandler);
+
+document
+  .getElementsByClassName("view-button")
+  .addEventListener("click", viewRecipeHandler);

@@ -11,6 +11,7 @@
       <div class="card-body text-black">
         {{drink.instructions}}
       </div>
+      <button id="drink_{{drink.id}}" class="view-button">View Recipe</button>
       <div class="card-footer text-muted">
         Posted by {{user.username}} on {{format_date createdAt}}
       </div>
@@ -40,3 +41,4 @@
   </div>
 {{/each}} --}}
 {{!-- </div> --}}
+<script src="/js/drink.js"></script>
