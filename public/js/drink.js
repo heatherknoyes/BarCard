@@ -40,6 +40,70 @@ function getLiquidIds() {
   return liquid_ids;
 }
 
+
+
 document
   .querySelector("#new-recipe-button")
   .addEventListener("click", newRecipeHandler);
+
+  const deleteRecipeHandler = async (event) => {
+    event.preventDefault();
+  
+    const url = '/api/drinks/' + $(this).attr('data-drink-id');
+
+      // Send a DELETE request to the API endpoint
+      const response = await fetch(url, {
+        method: "DELETE",
+        headers: {"Content-Type": "application/json"},
+      }); 
+
+      document.location.reload();
+    
+  };
+
+  
+  $(".delete_btn").on("click", deleteRecipeHandler);
+
+  const updateRecipeHandler = async (event) => {
+    event.preventDefault();
+
+    const drink_name = document.querySelector("#drink").value.trim();
+    const instructions = document.querySelector("#drink_instructions").value;
+    const liquid_ids = getLiquidIds();
+    const is_alcoholic = $("#is_alcoholic").is(":checked") ? "true" : "false";
+    const url = '/api/drinks/' + $(this).attr('data-drink-id');
+
+    const response = await fetch(url, {
+      method: "PUT",
+      body: JSON.stringify({
+        drink_name,
+        is_alcoholic,
+        liquid_ids,
+        instructions,
+      }),
+      headers: {"Content-Type": "application/json"}
+    });
+
+    document.location.reload();
+  }
+
+  $(".update_btn").on("click", updateRecipeHandler);
+
+
+
+  
+
+  // const delButtonHandler = async (event) => {
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
+//     await fetch(`/api/comments/${id}`, {
+//       method: 'DELETE',
+//       headers: { 'Content-Type': 'application/json' },
+//     });
+
+//     document.location.replace(`/blogs/${id}`);
+//   }
+// };
+// for (var i=0; i<nthDrink; i++) {
+//      $(".data-drink-id").on("click")
+//}
