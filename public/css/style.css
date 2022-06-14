@@ -4,6 +4,7 @@
 
 :root {
     --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
     --indigo: #0063b2ff;
     --indigo2: #195190ff;
     --bs-purple: #6f42c1;
@@ -131,6 +132,9 @@
   background-color: #a2a2a1ff;
   border-radius: 10px;
   font-size: 18px;
+  box-shadow: 1px 1px 20px var(--bs-info),
+  1px 1px 40px var(--bs-info);
+  animation: anime 1s linear infinite;
 }
 
 .ingredient-input {
