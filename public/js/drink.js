@@ -42,14 +42,14 @@ function getLiquidIds() {
 
 
 
-document
-  .querySelector("#new-recipe-button")
-  .addEventListener("click", newRecipeHandler);
+// document
+//   .querySelector("#new-recipe-button")
+//   .addEventListener("click", newRecipeHandler);
 
   const deleteRecipeHandler = async (event) => {
     event.preventDefault();
-  
-    const url = '/api/drinks/' + $(this).attr('data-drink-id');
+    console.log(event.target.getAttribute("data-drink-id"));
+    const url = '/api/drinks/' + event.target.getAttribute("data-drink-id");
 
       // Send a DELETE request to the API endpoint
       const response = await fetch(url, {
@@ -57,7 +57,7 @@ document
         headers: {"Content-Type": "application/json"},
       }); 
 
-      document.location.reload();
+      // document.location.reload();
     
   };
 

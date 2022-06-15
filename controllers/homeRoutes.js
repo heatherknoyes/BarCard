@@ -4,6 +4,26 @@ const { Liquid, Drink, User } = require("../models");
 const withAuth = require("../utils/auth.js");
 const format_date = require("../utils/helpers.js");
 
+const path = require("path");
+
+router.get('/testing', async (req, res) => {
+
+  try {
+    const drinkData = await Drink.findOne( {
+      where: {
+        drink_name: "Tropicalia" 
+      }
+    })
+    const drink = drinkData.get({ plain: true});
+    res.render('jsButtonTestPage',
+      drink
+    );
+          
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 router.get("/", (req, res) => {
   try {
     res.render("frontpage", { logged_in: req.session.logged_in });
