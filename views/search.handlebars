@@ -1,10 +1,10 @@
-<div class="barCard-body-box">
+<div class="container-fluid barCard-body-box vh-100">
   {{!-- <label for="text" class="text-white">Search:</label>
   <input type="text" id="text" class="text">
   <button class="search">Search Recipe</button> --}}
   <h3 class="text-white m-3">Currently submitted recipes: </h3>
   {{#each recipes as |drink|}}
-  <div class="row m-3">
+  <div class="row m-3 d-flex all-recipes-cards">
     <div class="card">
       <a href="/recipe/{{drink.id}}" class="card-header drink {{#if drink.is_alcoholic}}bg-success text-white{{else}}text-black{{/if}}">{{drink.drink_name}} {{#if drink.is_alcoholic}}CONTAINS ALCOHOL{{/if}} -  {{lookup ../emoticons @index}}</a>
       <div class="card-body text-black">
