@@ -204,7 +204,7 @@ body {
 }
 
 .box-shadow {
-  box-shadow: 1px 1px 20px var(--bs-info), 1px 1px 40px var(--bs-info);
+  box-shadow: 1px 1px 15px var(--bs-info), 1px 1px 40px var(--bs-info);
   animation: anime 1s linear infinite;
 }
 
@@ -225,7 +225,7 @@ body {
   background-color: #a2a2a1ff;
   border-radius: 10px;
   font-size: 18px;
-  box-shadow: 1px 1px 20px var(--bs-info), 1px 1px 40px var(--bs-info);
+  box-shadow: 1px 1px 15px var(--bs-info), 1px 1px 40px var(--bs-info);
   animation: anime 1s linear infinite;
 }
 
