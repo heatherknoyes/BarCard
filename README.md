@@ -1,90 +1,69 @@
 # BarCard
-  
-  
-  ![badge](https://img.shields.io/badge/license-mit-blue)
-    
 
-  ## Table-of-Contents
+![badge](https://img.shields.io/badge/license-mit-blue)
 
-  * [Description](#description)
-  * [Installation](#installation)
-  * [Image](#image)
-  
-  * [License](#license)
-    
-  * [Contributing](#contributing)
-  * [Tests](#tests)
-  * [Questions](#questions)
-  
-  ## [Description](#table-of-contents)
+## Table-of-Contents
 
-  This is BarCard! a site that lets bartenders and mixologists share there bar recipies and learn from one another. this a by group 13. Project #2. 
+- [Description](#description)
+- [Installation](#installation)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-  ## Project Process
+## [Description](#table-of-contents)
 
-Our group used everything we've learned over the past six modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. 
-here are some examples of what was used in the site!
+This is BarCard, a site that lets bartenders and mixologists share their bar recipies and learn from one another. This is by group 13. Project #2.
 
-*  We used Node.js and Express.js to create a RESTful API.
+## Project Process
 
-*  Used Handlebars.js.
+Our group used everything we've learned over the past six modules to create a real-world full-stack application to showcase to potential employers.
+Here are some examples of what was used in the site!
 
-* Programs such as MySQL and the Sequelize ORM where used for the database.
+- We used Node.js and Express.js to create a RESTful API.
 
-* We have both GET and POST routes for retrieving and adding new data.
+- Used Handlebars.js as a template engine for dynamic HTML.
 
-* we tired to Have a folder structure that meets the MVC paradigm.
+- Programs such as MySQL and the Sequelize ORM were used for the database.
 
-* The site includes authentication (express-session and cookies).
+- We have both GET and POST routes for retrieving and adding new data.
 
-* BHeroku was used to depoly the site (with data).
+- We have a folder structure that meets the MVC paradigm.
 
-* The UI is pretty polished.
+- The site includes authentication (express-session and cookies).
 
-* We made sure the site is responsive threw out.
+- Heroku was used to depoly the site (with data).
 
-* With Being responsive we made the site interactive.
+- The UI is polished.
 
-* Made a professional README (with unique name, description, screenshot, and link to deployed application).
+- We made sure the site is responsive throughout.
 
-  ## [Installation](#table-of-contents)
+- While being responsive it is also interactive for the user.
 
- * To run the site , you will need to use this site which is run with Heroku: https://barcard-group13.herokuapp.com/
- * Incase that dose not work please reffer to the Github page repo for this project: https://github.com/heatherknoyes/BarCard
+## [Installation](#table-of-contents)
 
-  ## [Image](#table-of-contents)
-  
+- To run the site, you can use this link which is run with Heroku: https://barcard-group13.herokuapp.com/
+- In the case that does not work please refer to the Github page repo for this project: https://github.com/heatherknoyes/BarCard
 
- 
-  
- ## [License](#table-of-contents)
-  
-    The application is covered under the following license:
-  
- [mit](https://choosealicense.com/licenses/mit)
-      
-      
+## [License](#table-of-contents)
 
-  ## [Contributing](#table-of-contents)
-  
-    Contributions by team 13 and others: 
-    - Heather Noyes
-    - Andrew Bungcayao
-    - Malik Henry
-    - Oscar Salgado
+The application is covered under the following license: [mit](https://choosealicense.com/licenses/mit)
 
-    
+## [Contributing](#table-of-contents)
 
-  ## [Tests](#table-of-contents)
+Contributions by team 13 and others:
 
-  to test the site just click link: https://barcard-group13.herokuapp.com/
+- Heather Noyes
+- Andrew Bungcayao
+- Malik Henry
+- Oscar Salgado
 
-  ## [Questions](#table-of-contents)
+## [Tests](#table-of-contents)
 
-  Please contact us using the following links:
+To test the site click the following link: https://barcard-group13.herokuapp.com/
 
-  [GitHub](https://github.com/heatherknoyes https://github.com/heatherknoyes)
+## [Questions](#table-of-contents)
 
-  
+Please contact us using the following links:
 
- 
+[GitHub](https://github.com/heatherknoyes https://github.com/heatherknoyes)

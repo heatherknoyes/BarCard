@@ -5,32 +5,42 @@ const Liquid = require("./Liquid");
 const Mixing = require("./Mixing");
 
 User.hasMany(Drink, {
-  foreignKey: "userId",
+  foreignKey: "user_id",
   onDelete: "CASCADE",
 });
 
 User.hasMany(Review, {
-  foreignKey: "userId",
+  foreignKey: "user_id",
   onDelete: "CASCADE",
 });
 
 Drink.hasMany(Review, {
-  foreignKey: "drinkId",
+  foreignKey: "drink_id",
   onDelete: "CASCADE",
 });
 
 Drink.hasMany(Mixing, {
-  foreignKey: "drinkId",
+  foreignKey: "drink_id",
   onDelete: "CASCADE",
 });
 
 Drink.belongsTo(User, {
-  foreignKey: "userId",
+  foreignKey: "user_id",
   onDelete: "CASCADE",
 });
 
-Liquid.hasMany(Mixing, {
-  foreignKey: "liquidId",
+Review.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+
+Liquid.belongsTo(Mixing, {
+  foreignKey: "liquid_id",
+  onDelete: "CASCADE",
+});
+
+Drink.belongsTo(Mixing, {
+  foreignKey: "drink_id",
   onDelete: "CASCADE",
 });
 
