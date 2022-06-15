@@ -20,52 +20,32 @@
 
   This is BarCard! a site that lets bartenders and mixologists share there bar recipies and learn from one another. this a by group 13. Project #2. 
 
-  ## Project Requirements
+  ## Project Process
 
-Our group used everything we've learned over the past six modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that we create, but our project must fulfil the following requirements:
+Our group used everything we've learned over the past six modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. 
+here are some examples of what was used in the site!
 
-* Use Node.js and Express.js to create a RESTful API.
+*  We used Node.js and Express.js to create a RESTful API.
 
-* Use Handlebars.js as the template engine.
+*  Used Handlebars.js.
 
-* Use MySQL and the Sequelize ORM for the database.
+* Programs such as MySQL and the Sequelize ORM where used for the database.
 
-* Have both GET and POST routes for retrieving and adding new data.
+* We have both GET and POST routes for retrieving and adding new data.
 
-* Use at least one new library, package, or technology that we haven’t discussed.
+* we tired to Have a folder structure that meets the MVC paradigm.
 
-* Have a folder structure that meets the MVC paradigm.
+* The site includes authentication (express-session and cookies).
 
-* Include authentication (express-session and cookies).
+* BHeroku was used to depoly the site (with data).
 
-* Protect API keys and sensitive information with environment variables.
+* The UI is pretty polished.
 
-* Be deployed using Heroku (with data).
+* We made sure the site is responsive threw out.
 
-* Have a polished UI.
+* With Being responsive we made the site interactive.
 
-* Be responsive.
-
-* Be interactive (i.e., accept and respond to user input).
-
-* Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
-* Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
-## Presentation Requirements
-
-* Elevator pitch: a one minute description of the application
-
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to the deployed application and the GitHub repository. 
-
+* Made a professional README (with unique name, description, screenshot, and link to deployed application).
 
   ## [Installation](#table-of-contents)
 
