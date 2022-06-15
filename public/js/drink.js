@@ -89,9 +89,36 @@ document
 
   $(".update_btn").on("click", updateRecipeHandler);
 
+const starRatingHandler = async (event) => {
+  event.preventDefault();
+  const url = '/api/reviews/' + $(this).attr('');
 
+  const id = document.querySelector("#id").value.trim();
+  const stars = document.querySelector("");
+  const drink_id = '';
+  const user_id = '';
+  const comments = '';
 
-  
+  var newstarRating = $(this).attr('id'); 
+   starRating = newstarRating;
+   $(this).addClass('checked');
+
+  const response = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify({
+      id,
+      stars,
+      comments,
+      drink_id,
+      user_id,
+    }),
+    headers: {"Content-Type": "application/json"}
+  });
+
+  document.location.reload();
+}
+
+$('.fa').on('click', starRatingHandler);
 
   // const delButtonHandler = async (event) => {
 //   if (event.target.hasAttribute('data-id')) {
