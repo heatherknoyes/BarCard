@@ -19,7 +19,7 @@ Mixing.init(
       },
     },
     drink_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: "drink",
         key: "id",
