@@ -178,6 +178,7 @@
 
 /* All Recipes */
 
-.all-recipes-cards {
-  height: 25vh;
+.new-recipe-cards-container {
+  max-height: 100vh;
+  min-height: 25%;
 }
