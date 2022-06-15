@@ -175,3 +175,27 @@
 }
 
 /* New Recipe Page */
+
+.mixing-liquid {
+  font-size: 40px;
+
+  /* May not keep code below */
+  background: linear-gradient(to right,
+  lightblue, rgb(0, 221, 255));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.new-recipe-liquid {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 90px;
+  background-color: #a2a2a1ff;
+  border-radius: 10px;
+  font-size: 18px;
+  box-shadow: 1px 1px 20px var(--bs-info),
+    1px 1px 40px var(--bs-info);
+  animation: anime 1s linear infinite;
+  
+}
