@@ -76,25 +76,9 @@ const updateRecipeHandler = async (event) => {
   document.location.reload();
 };
 
-// $(".update_btn").on("click", updateRecipeHandler);
+// document
+//   .querySelector("#new-recipe-button")
+//   .addEventListener("click", newRecipeHandler);
 
-// $(".delete_btn").on("click", deleteRecipeHandler);
-
-document
-  .querySelector("#new-recipe-button")
-  .addEventListener("click", newRecipeHandler);
-
-// const delButtonHandler = async (event) => {
-//   if (event.target.hasAttribute('data-id')) {
-//     const id = event.target.getAttribute('data-id');
-//     await fetch(`/api/comments/${id}`, {
-//       method: 'DELETE',
-//       headers: { 'Content-Type': 'application/json' },
-//     });
-
-//     document.location.replace(`/blogs/${id}`);
-//   }
-// };
-// for (var i=0; i<nthDrink; i++) {
-//      $(".data-drink-id").on("click")
-//}
+$(".update_btn").on("click", updateRecipeHandler);
+$(".delete_btn").on("click", deleteRecipeHandler);
