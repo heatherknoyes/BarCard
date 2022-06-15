@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const emoticon = require("emoticon.js");
 const { Liquid, Drink, User } = require("../models");
 const withAuth = require("../utils/auth.js");
 const format_date = require("../utils/helpers.js");
@@ -75,8 +76,15 @@ router.get("/search", withAuth, async (req, res) => {
     // Serialize data so the template can read it
     const recipes = recipeData.map((drink) => drink.get({ plain: true }));
 
+    const emoticons = recipes.map(() => emoticon());
+
     // Pass serialized data and session flag into template
-    res.render("search", { recipes, logged_in: req.session.logged_in });
+    res.render("search", {
+      recipes,
+      logged_in: req.session.logged_in,
+      // using extra npm library here
+      emoticons,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
