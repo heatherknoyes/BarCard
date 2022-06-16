@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
       drink_name,
       instructions,
       is_alcoholic,
-      userId: req.session.user_id,
+      user_id: req.session.user_id,
     });
 
     if (drinkData) {

@@ -85,5 +85,5 @@ document
   .querySelector("#new-recipe-button")
   .addEventListener("click", newRecipeHandler);
 
-$(".update_btn").on("click", updateRecipeHandler);
-$(".delete_btn").on("click", deleteRecipeHandler);
+// $(".update_btn").on("click", updateRecipeHandler);
+// $(".delete_btn").on("click", deleteRecipeHandler);
