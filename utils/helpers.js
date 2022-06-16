@@ -19,4 +19,10 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  times: (n) => {
+    var accum = "";
+    for (var i = 0; i < n; ++i)
+      accum += `<span class="fa fa-star checked"></span>`;
+    return accum;
+  },
 };
