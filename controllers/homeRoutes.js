@@ -6,23 +6,19 @@ const format_date = require("../utils/helpers.js");
 
 const path = require("path");
 
-router.get('/testing', async (req, res) => {
-
+router.get("/testing", async (req, res) => {
   try {
-    const drinkData = await Drink.findOne( {
+    const drinkData = await Drink.findOne({
       where: {
-        drink_name: "Tropicalia" 
-      }
-    })
-    const drink = drinkData.get({ plain: true});
-    res.render('jsButtonTestPage',
-      drink
-    );
-          
+        drink_name: "Tropicalia",
+      },
+    });
+    const drink = drinkData.get({ plain: true });
+    res.render("jsButtonTestPage", drink);
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 router.get("/", (req, res) => {
   try {
@@ -74,27 +70,6 @@ router.get("/newrecipe", withAuth, async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-router.get("/recipe/:id", withAuth, async (req, res) => {
-  try {
-    const recipeData = await Drink.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
-    });
-
-    // Serialize data so the template can read it
-    const recipes = recipeData.map((drink) => drink.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render("search", { recipes, logged_in: req.session.logged_in });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-=======
 router.get("/recipe/:id", async (req, res) => {
   const recipeDataWithReviews = await Drink.findByPk(req.params.id, {
     include: [
@@ -130,7 +105,6 @@ router.get("/recipe/:id", async (req, res) => {
     liquidNamesArray,
     logged_in: req.session.logged_in,
   });
->>>>>>> origin
 });
 
 router.get("/newingredient", withAuth, (req, res) => {
