@@ -118,7 +118,7 @@ const starRatingHandler = async (event) => {
   document.location.reload();
 }
 
-$('.fa').on('click', starRatingHandler);
+$('.fa').on('click', starRatingHandler); // font-awesome classes for the star rating
 
   // const delButtonHandler = async (event) => {
 //   if (event.target.hasAttribute('data-id')) {
