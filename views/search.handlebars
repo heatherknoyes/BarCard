@@ -2,9 +2,9 @@
   {{!-- <label for="text" class="text-white">Search:</label>
   <input type="text" id="text" class="text">
   <button class="search">Search Recipe</button> --}}
-  <h3 class="text-white m-3">Recipe Library</h3>
+  <h3 class="text-white text-center m-3">Recipe Library</h3>
   {{#each recipes as |drink|}}
-  <div class="row m-3">
+  <div class="row m-3 box-shadow">
     <div class="card">
       <a href="/recipe/{{drink.id}}" class="card-header {{#if drink.is_alcoholic}}bg-success text-white{{else}}text-black{{/if}}">{{drink.drink_name}} {{#if drink.is_alcoholic}}CONTAINS ALCOHOL{{/if}} -  {{lookup ../emoticons @index}}</a>
       <div class="card-body text-black">
