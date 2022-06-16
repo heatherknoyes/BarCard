@@ -15,6 +15,9 @@
 
 This is BarCard, a site that lets bartenders and mixologists share their bar recipies and learn from one another. This is by group 13. Project #2.
 
+![site shot](/images/BarCard-front-page-demo.jpg)
+
+
 ## Project Process
 
 Our group used everything we've learned over the past six modules to create a real-world full-stack application to showcase to potential employers.

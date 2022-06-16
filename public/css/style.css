@@ -99,13 +99,49 @@
 }
 
 .frontpage-features {
-  background-image: url("../images/BarCard-planet.jpg");
-  background-position: center;
-  background-size: cover;
+  background-image: url("../images/galexy.jpg");
+  position:relative;
+  bottom: -500;
   width: 100vw;
-  box-shadow: 1px 1px 20px #14EACFFF,
+  box-shadow: 1px 1px 20px rgb(91, 11, 167),
 				1px 1px 40px #14EACFFF;
 	animation: anime 1s linear infinite;
+ font-family: sans-serif;
+}
+
+.front-page-image {
+  height: 100%;
+  width: 100%;
+  position:fixed;
+  margin-bottom: 25px;
+  size-adjust: 100px;
+  z-index: -999;
+}
+
+.footer-div-box {
+  position: fixed;
+  bottom: 5;
+  left: 42%;
+  color: #f1ecf3;
+  font-family: sans-serif;
+}
+
+.mt-4 {
+ position: relative;
+ font-style: italic;
+ color: #f1eaf3;
+}
+
+.mt-5 {
+  background-image: url("../images/galexy.jpg");
+  position:absolute;
+  bottom: 450;
+  margin-right:0px; 
+  box-shadow: 1px 1px 20px rgb(117, 14, 201),
+  1px 1px 40px #14EACFFF;
+animation: anime 1s linear infinite;
+font-family: sans-serif;
+color: #f1edf3;
 }
 
 /* Login Page */
