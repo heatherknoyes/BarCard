@@ -1,7 +1,7 @@
 <div class="barCard-body-box">
   <div class="row my-3">
     <div class="card">
-      <div class="card-header {{#if drink.is_alcoholic}}bg-success text-white{{else}}text-black{{/if}}">{{drink.drink_name}} {{#if drink.is_alcoholic}}CONTAINS ALCOHOL{{/if}}</div>
+      <div class="card-header {{#if drink.is_alcoholic}}custom-bg-red text-white{{else}}bg-success text-white{{/if}}">{{drink.drink_name}} {{#if drink.is_alcoholic}}CONTAINS ALCOHOL{{/if}}</div>
       <div class="card-body text-black">
         {{drink.instructions}}
       </div>
