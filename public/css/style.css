@@ -250,6 +250,10 @@ body {
   min-height: 20vh;
 }
 
+.new-recipe-cards-container a {
+  text-decoration: none;
+}
+
 /* .new-recipe-card {
   min-height: 15vh;
   height: 15vh;
