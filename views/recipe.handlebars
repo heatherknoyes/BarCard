@@ -1,0 +1,12 @@
+<div class="barCard-body-box">
+  <div class="row my-3">
+    <div class="card">
+      <div class="card-header {{#if drink.is_alcoholic}}bg-success text-white{{else}}text-black{{/if}}">{{drink.drink_name}} {{#if drink.is_alcoholic}}CONTAINS ALCOHOL{{/if}}</div>
+      <div class="card-body text-black">
+        {{drink.instructions}}
+      </div>
+      <div class="card-footer text-muted">
+        Posted by {{user.username}} on {{format_date createdAt}}
+      </div>
+    </div>
+  </div>

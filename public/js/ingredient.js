@@ -15,8 +15,8 @@ const newIngredientHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the account page
-      document.location.replace("/account");
+      // If successful, redirect the browser to the search page
+      document.location.replace("/search");
     } else {
       alert(response.statusText);
     }
