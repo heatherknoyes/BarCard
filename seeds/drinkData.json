@@ -15,6 +15,16 @@
     "is_alcoholic": false
   },
   {
+    "drink_name": "Coca-Cola",
+    "instructions": "Stir it",
+    "is_alcoholic": false
+  },
+  {
+    "drink_name": "Ginger Ale",
+    "instructions": "Stir it",
+    "is_alcoholic": false
+  },
+  {
     "drink_name": "Virgin Strawberry Daquiri",
     "instructions": "Blend it",
     "is_alcoholic": false

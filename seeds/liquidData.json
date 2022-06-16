@@ -18,5 +18,25 @@
     "name": "Coca-Cola",
     "serving_size_oz": 4,
     "is_alcohol": false
+  },
+  {
+    "name": "Lime Juice",
+    "serving_size_oz": 2,
+    "is_alcohol": false
+  },
+  {
+    "name": "Strawberry Syrup",
+    "serving_size_oz": 4,
+    "is_alcohol": false
+  },
+  {
+    "name": "Ginger Ale",
+    "serving_size_oz": 6,
+    "is_alcohol": false
+  },
+  {
+    "name": "Grenadine",
+    "serving_size_oz": 2,
+    "is_alcohol": false
   }
 ]
