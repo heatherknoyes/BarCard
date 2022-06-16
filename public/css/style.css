@@ -102,9 +102,27 @@ body {
 
 
 /* Front Page */
+.frontpage-image-wrapper {
+  position: relative;
+}
+
 .frontpage-image {
   width: 100vw;
   height: 60vh;
+}
+
+.frontpage-image-wrapper span {
+  position:absolute;
+	top: 100;
+	bottom:0;
+	left: 100;
+	right:0;
+	width: 400px;
+	height: 150px;
+	z-index: 100;
+	background: transparent url("../images/BarCard-planet.jpg") no-repeat;
+  background-attachment: fixed;
+	background-position: bottom right;
 }
 
 .frontpage-features {
