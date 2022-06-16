@@ -4,12 +4,12 @@ const router = require("express").Router();
 
 router.post("/", async (req, res) => {
   try {
-    const { review_content, drink_id } = req.body;
+    const { review_content, drink_id, starRating } = req.body;
 
     const drinkData = await Review.create({
       comment: review_content,
       drink_id,
-      stars: 5,
+      stars: starRating,
       user_id: req.session.user_id,
     });
 
