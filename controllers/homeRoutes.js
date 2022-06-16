@@ -1,7 +1,28 @@
 const router = require("express").Router();
-const { Liquid, Drink, User } = require("../models");
+const emoticon = require("emoticon.js");
+const { Liquid, Drink, User, Review, Mixing } = require("../models");
 const withAuth = require("../utils/auth.js");
 const format_date = require("../utils/helpers.js");
+
+const path = require("path");
+
+router.get('/testing', async (req, res) => {
+
+  try {
+    const drinkData = await Drink.findOne( {
+      where: {
+        drink_name: "Tropicalia" 
+      }
+    })
+    const drink = drinkData.get({ plain: true});
+    res.render('jsButtonTestPage',
+      drink
+    );
+          
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 router.get("/", (req, res) => {
   try {
@@ -53,6 +74,7 @@ router.get("/newrecipe", withAuth, async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 router.get("/recipe/:id", withAuth, async (req, res) => {
   try {
     const recipeData = await Drink.findByPk(req.params.id, {
@@ -72,6 +94,43 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+=======
+router.get("/recipe/:id", async (req, res) => {
+  const recipeDataWithReviews = await Drink.findByPk(req.params.id, {
+    include: [
+      { model: User, attributes: ["username"] },
+      {
+        model: Review,
+        include: { model: User, attributes: ["username"] },
+      },
+    ],
+  });
+
+  const recipeDataWithMixing = await Drink.findByPk(req.params.id, {
+    include: [{ model: Mixing }],
+  });
+
+  const liquidIdArray = [];
+  recipeDataWithMixing.mixings.forEach((mix) => {
+    // for each mix I want to find the liquid name and put it into an array
+    liquidIdArray.push(mix.liquid_id);
+  });
+
+  const liquidNamesArray = [];
+  liquidIdArray.forEach(async (liquid) => {
+    const singleLiquid = await Liquid.findByPk(liquid);
+    liquidNamesArray.push(singleLiquid.dataValues.name);
+  });
+
+  // Serialize data so the template can read it
+  const drink = recipeDataWithReviews.get({ plain: true });
+
+  res.render("viewrecipe", {
+    drink,
+    liquidNamesArray,
+    logged_in: req.session.logged_in,
+  });
+>>>>>>> origin
 });
 
 router.get("/newingredient", withAuth, (req, res) => {
@@ -95,9 +154,15 @@ router.get("/search", withAuth, async (req, res) => {
 
     // Serialize data so the template can read it
     const recipes = recipeData.map((drink) => drink.get({ plain: true }));
+    const emoticons = recipes.map(() => emoticon());
 
     // Pass serialized data and session flag into template
-    res.render("search", { recipes, logged_in: req.session.logged_in });
+    res.render("search", {
+      recipes,
+      logged_in: req.session.logged_in,
+      // using extra npm library here
+      emoticons,
+    });
   } catch (err) {
     res.status(500).json(err);
   }

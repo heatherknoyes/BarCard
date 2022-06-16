@@ -1,13 +1,12 @@
 <div class="barCard-body-box">
-  <label for="text" class="text-white">Search:</label>
+  {{!-- <label for="text" class="text-white">Search:</label>
   <input type="text" id="text" class="text">
-  <button class="search">Search Recipe</button>
-
-  <h3 class="text-white">Currently submitted recipes: </h3>
+  <button class="search">Search Recipe</button> --}}
+  <h3 class="text-white m-3">Currently submitted recipes: </h3>
   {{#each recipes as |drink|}}
-  <div class="row my-3">
+  <div class="row m-3">
     <div class="card">
-      <div class="card-header {{#if drink.is_alcoholic}}bg-success text-white{{else}}text-black{{/if}}">{{drink.drink_name}} {{#if drink.is_alcoholic}}CONTAINS ALCOHOL{{/if}}</div>
+      <a href="/recipe/{{drink.id}}" class="card-header drink {{#if drink.is_alcoholic}}bg-success text-white{{else}}text-black{{/if}}">{{drink.drink_name}} {{#if drink.is_alcoholic}}CONTAINS ALCOHOL{{/if}} -  {{lookup ../emoticons @index}}</a>
       <div class="card-body text-black">
         {{drink.instructions}}
       </div>
@@ -18,6 +17,7 @@
     </div>
   </div>
   {{/each}}
+<<<<<<< HEAD
 {{!-- <div class="row">
   <form id="comment-form">
     <label for="create-post-content" class="form-label">Comment Here</label>
@@ -42,3 +42,5 @@
 {{/each}} --}}
 {{!-- </div> --}}
 <script src="/js/drink.js"></script>
+=======
+>>>>>>> origin
