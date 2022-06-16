@@ -13,5 +13,15 @@
     "drink_name": "Orange Juice",
     "instructions": "Stir it",
     "is_alcoholic": false
+  },
+  {
+    "drink_name": "Virgin Strawberry Daquiri",
+    "instructions": "Blend it",
+    "is_alcoholic": false
+  },
+  {
+    "drink_name": "Shirley Temple",
+    "instructions": "Mix it",
+    "is_alcoholic": false
   }
 ]
