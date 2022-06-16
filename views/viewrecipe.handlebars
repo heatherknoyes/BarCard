@@ -26,7 +26,7 @@
     <div class="form-floating">
       <textarea class="form-control" id="review-text-area" style="height: 100px"></textarea>
     </div>
-    <button id="review-submit" class="my-3">Submit Review</button>
+    <button id="review-submit-button" data-drink-id={{drink.id}} class="my-3">Submit Review</button>
   </form>
 </div>
 
@@ -43,3 +43,5 @@
     </div>
   </div>
 {{/each}}
+
+<script src="/js/recipe.js"
