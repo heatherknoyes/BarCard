@@ -4,41 +4,56 @@
 
 ## Table-of-Contents
 
-- [Description](#description)
-- [Installation](#installation)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
+- [BarCard](#barcard)
+  - [Table-of-Contents](#table-of-contents)
+  - [Description](#description)
+  - [Project Process](#project-process)
+  - [Installation](#installation)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
 
 ## [Description](#table-of-contents)
 
-This is BarCard, a site that lets bartenders and mixologists share their bar recipies and learn from one another. This is by group 13. Project #2.
+BarCard is a web application that allows users to view, create, and share drink recipes in a user-created account. For the professional bartender or mixologist, BarCard is a clean, user friendly platform for building an easily modifiable drink personal profile. 
+
+![Title screen](public/images/Screen%20Shot%202022-06-16%20at%205.55.04%20PM.png)
 
 ## Project Process
 
-Our group used everything we've learned over the past six modules to create a real-world full-stack application to showcase to potential employers.
-Here are some examples of what was used in the site!
+For this project, Project 2, group 13 made use of the full range of packages that we have developed over the last 2-3 months. The project technologies listed below enabled our group to create a Full-Stack web application that is tailored to the needs of the user.
+The associated technologies include, but are not limited to:
 
-- We used Node.js and Express.js to create a RESTful API.
+- Node.js and Express.js used to create a RESTful API.
 
-- Used Handlebars.js as a template engine for dynamic HTML.
+- Handlebars.js as a template engine for dynamic HTML content.
 
-- Programs such as MySQL and the Sequelize ORM were used for the database.
+- Programs such as MySQL and the Sequelize ORM used for backend development and the creation of databases.
 
-- We have both GET and POST routes for retrieving and adding new data.
+- Custom API routes (GET, POST, PUT, and DELETE) built for sending and retrieving data.
 
-- We have a folder structure that meets the MVC paradigm.
+- Heroku for deploying the fully-functional, data-seeded application that meets best practices.
+  
+ Beyond using the aforementioned technologies to simply meet the acceptance criteria, our team took careful consideration to build
+ a technology that meets the needs of the user. With the initial idea being to create a user-centered drink database, we prioritized the building of functions that would enhance the user experience as a whole. Concretely, this process took the form of building databases that allow the user to search recipes by drink and ingredient. This feature required successfully creating many-to-one and many-to-many relationships due to different drinks containing multiple liquids and vice versa. 
+ 
 
-- The site includes authentication (express-session and cookies).
+ Upon being presented with the title page, the user is prompted to log in or create an account in the absence of an existing one. User session gets saved as a cookie.
+![Login Screen](public/images/Screen%20Shot%202022-06-16%20at%205.48.13%20PM.png)
 
-- Heroku was used to depoly the site (with data).
+Once logged in, the user is presented with the recipe library and given the options All Recipes, New Recipe, New Ingredient, Logout.
+![Recipe Library Screen and Open Tab](public/images/Screen%20Shot%202022-06-16%20at%205.50.05%20PM.png)
 
-- The UI is polished.
 
-- We made sure the site is responsive throughout.
+When a recipe is viewed, the user is presented with the option to leave a review and a rating. Each review saves for each drink so that the user can keep track of their favorite drinks. Star ratings are appended to each comment as well.
+![Recipe Review Page](public/images/Screen%20Shot%202022-06-16%20at%205.51.30%20PM.png).
 
-- While being responsive it is also interactive for the user.
+
+There is an option for the user to add another ingredient in the database that was not previously existing.
+![Add Ingredient](public/images/Screen%20Shot%202022-06-16%20at%206.07.52%20PM.png).
+
+In addition to UI/UX prioritization, the MVC paradigm and file structure follows best practices.
 
 ## [Installation](#table-of-contents)
 
