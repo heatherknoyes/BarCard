@@ -254,6 +254,10 @@ body {
   text-decoration: none;
 }
 
+.custom-bg-red {
+  background-color: #d32f2f;
+}
+
 /* .new-recipe-card {
   min-height: 15vh;
   height: 15vh;
