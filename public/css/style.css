@@ -243,3 +243,8 @@ body {
   -webkit-background-clip: text;
 }
 
+/* Reviews */
+.checked {
+  color: gold;
+}
+
