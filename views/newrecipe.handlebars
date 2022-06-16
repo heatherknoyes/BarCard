@@ -1,11 +1,11 @@
 <div class="recipe-form container-fluid d-flex flex-column align-items-center">
-  <h1 class="new-recipe-header mb-4">Submit New Drink Recipe Here</h1>
-  <label for="drink" class="new-recipe-drink-name mb-2">Drink Name: </label>
+  <h1 class="new-recipe-header mb-4 mt-4">Submit New Drink Recipe Here</h1>
+  <label for="drink" class="new-recipe-drink-name mb-2 mt-4">Drink Name: </label>
   <input id="drink" type="text" class="box-shadow" /><br />
-  <div class="mb-2">
+  <div class="mb-2 mt-4">
   <label for="liquid" class="mixing-liquid">Mixing Liquids </label><br />
   </div>
-  <div class="d-flex flex-column new-recipe-liquid">
+  <div class="d-flex flex-column new-recipe-liquid mb-4">
     {{#each liquids as |liquid|}}
       <label for="liquid_{{liquid.id}}"><input
           type="checkbox"
@@ -27,7 +27,7 @@
   
   {{! <button type="button" class="btn btn-primary" id="add-ingredients-button">Add Ingredients</button> }}
   <label for="drink_instructions" class="mt-4 mb-2 recipe-instructions">Recipe Instructions: </label>
-  <textarea id="drink_instructions" class="box-shadow" rows="5" cols="50"></textarea>
+  <textarea id="drink_instructions" class="box-shadow mb-2" rows="5" cols="50"></textarea>
   <button
     type="button"
     class="btn btn-primary mt-4 mb-4 box-shadow"
