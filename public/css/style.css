@@ -104,7 +104,7 @@ body {
 /* Front Page */
 .frontpage-image {
   width: 100vw;
-  height: 60vh;
+  height: 70vh;
 }
 
 .frontpage-features {
@@ -114,6 +114,10 @@ body {
   width: 100vw;
   box-shadow: 1px 1px 20px #14eacfff, 1px 1px 40px #14eacfff;
   animation: anime 1s linear infinite;
+}
+
+.frontpage-li {
+  list-style-type: none;
 }
 
 
