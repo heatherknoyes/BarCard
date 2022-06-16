@@ -22,7 +22,7 @@ const newRecipeHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the account page
-      document.location.replace("/account");
+      document.location.replace("/search");
     } else {
       alert(response.statusText);
     }
@@ -31,7 +31,7 @@ const newRecipeHandler = async (event) => {
 
 const viewRecipeHandler = async (event) => {
   console.log("hit a button");
-  document.location.replace("/account");
+  document.location.replace("/search");
 };
 
 function getLiquidIds() {
