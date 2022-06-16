@@ -14,5 +14,29 @@
   {
     "drink_id": 3,
     "liquid_id": 3
+  },
+  {
+    "drink_id": 4,
+    "liquid_id": 4
+  },
+  {
+    "drink_id": 5,
+    "liquid_id": 7
+  },
+  {
+    "drink_id": 6,
+    "liquid_id": 5
+  },
+  {
+    "drink_id": 6,
+    "liquid_id": 6
+  },
+  {
+    "drink_id": 7,
+    "liquid_id": 7
+  },
+  {
+    "drink_id": 7,
+    "liquid_id": 8
   }
 ]
