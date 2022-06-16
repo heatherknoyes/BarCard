@@ -14,9 +14,15 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/style.css" />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    ></script>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark sticky-top" aria-label="First navbar example">
+    <nav
+      class="navbar navbar-dark bg-dark sticky-top"
+      aria-label="First navbar example"
+    >
       <div class="container-fluid">
         <a class="navbar-brand" href="/">BarCard</a>
         <button
@@ -34,21 +40,21 @@
         <div class="collapse navbar-collapse" id="navbarsExample01">
           <ul class="navbar-nav me-auto mb-2 align-items-end">
             {{#if logged_in}}
-            <li class="nav-item">
-              <a class="nav-link" href="/search">All Recipes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/account">Your Recipes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/newrecipe">New Recipe</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/newingredient">New Ingredient</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/logout">Logout</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/search">All Recipes</a>
+              </li>
+              {{!-- <li class="nav-item">
+                <a class="nav-link" href="/account">Your Recipes</a>
+              </li> --}}
+              <li class="nav-item">
+                <a class="nav-link" href="/newrecipe">New Recipe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/newingredient">New Ingredient</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
             {{else}}
               <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
@@ -72,7 +78,4 @@
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
   integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
   crossorigin="anonymous"
-></script>
-<script
-  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
 ></script>

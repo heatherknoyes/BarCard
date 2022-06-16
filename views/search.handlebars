@@ -1,42 +1,23 @@
-<div class="barCard-body-box">
-  <label for="text" class="text-white">Search:</label>
+<div class="container barCard-body-box vh-100">
+  {{!-- <label for="text" class="text-white">Search:</label>
   <input type="text" id="text" class="text">
-  <button class="search">Search Recipe</button>
-
-  <h3 class="text-white">Currently submitted recipes: </h3>
+  <button class="search">Search Recipe</button> --}}
+  <h3 class="text-white text-center m-3">Recipe Library</h3>
   {{#each recipes as |drink|}}
-  <div class="row my-3">
+  <div class="row m-4 box-shadow new-recipe-cards-container">
     <div class="card">
-      <div class="card-header {{#if drink.is_alcoholic}}bg-success text-white{{else}}text-black{{/if}}">{{drink.drink_name}} {{#if drink.is_alcoholic}}CONTAINS ALCOHOL{{/if}} -  {{lookup ../emoticons @index}}</div>
+      <a href="/recipe/{{drink.id}}" class="card-header mt-2 {{#if drink.is_alcoholic}}custom-bg-red text-white{{else}}bg-success text-white{{/if}}">{{drink.drink_name}} {{#if drink.is_alcoholic}}CONTAINS ALCOHOL{{/if}} -  {{lookup ../emoticons @index}}</a>
       <div class="card-body text-black">
         {{drink.instructions}}
       </div>
-      <div class="card-footer text-muted">
+      <div class="d-flex justify-content-center mb-3">
+      <button id="drink_{{drink.id}}" class="drink view-button" data-drink-id="{{drink.id}}">View Recipe</button>
+      </div>
+      <div class="card-footer text-muted mb-2">
         Posted by {{user.username}} on {{format_date createdAt}}
       </div>
     </div>
   </div>
   {{/each}}
-{{!-- <div class="row">
-  <form id="comment-form">
-    <label for="create-post-content" class="form-label">Comment Here</label>
-    <div class="form-floating">
-      <textarea class="form-control" id="comment-text-area" style="height: 100px"></textarea>
-    </div>
-    <button id="comment-submit" class="my-3" data-id="{{id}}">Submit Comment</button>
-  </form>
-</div> --}}
 
-{{!-- {{#each Comments as |comment|}}
-  <div class="row my-1">
-    <div class="card">
-      <div class="card-body">
-        <p class="card-text">{{comment.content}}</p>
-      </div>
-      <div class="card-footer text-muted" style="background-color: #dcd0ff;">
-        Posted by {{comment.user.username}} on {{format_date comment.createdAt}}
-      </div>
-    </div>
-  </div>
-{{/each}} --}}
-{{!-- </div> --}}
+  <script src="/js/recipe.js"></script>

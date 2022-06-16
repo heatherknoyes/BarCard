@@ -1,0 +1,60 @@
+<div class="row m-3">
+  <div class="card">
+    <div class="card-header drink {{#if drink.is_alcoholic}}bg-success text-white{{else}}text-black{{/if}}">{{drink.drink_name}} {{#if drink.is_alcoholic}}CONTAINS ALCOHOL{{/if}}</div>
+    <!-- need to add liquids here for ingredients -->
+    <div class="card-body text-black">
+      Ingredients: <br>
+    {{#each liquidNamesArray as |liquid|}}
+      {{liquid}}<br>
+    {{/each}}
+    </div>
+    <div class="card-body text-black">
+      Instructions: <br>
+      {{drink.instructions}}
+    </div>
+    <div class="card-footer text-muted">
+      Posted by {{drink.user.username}}
+    </div>
+  </div>
+</div>
+<!-- need to display reviews/comments here -->
+
+<div class="row m-3">
+  <form id="review-form">
+    <label for="create-post-content" class="form-label">Review Here</label>
+    <!-- put stars in here somewhere? -->
+    <div class="star-container">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <span id="1" data-name="1" class="fa fa-star"></span>
+      <span id="2" data-name="2" class="fa fa-star"></span>
+      <span id="3" data-name="3" class="fa fa-star"></span>
+      <span id="4" data-name="4" class="fa fa-star"></span>
+      <span id="5" data-name="5" class="fa fa-star"></span>
+    </div>
+    <div class="form-floating">
+      <textarea class="form-control" id="review-text-area" style="height: 100px"></textarea>
+    </div>
+    <button id="review-submit-button" data-drink-id={{drink.id}} class="my-3">Submit Review</button>
+  </form>
+</div>
+
+{{#each drink.reviews as |review|}}
+  <div class="row m-3">
+    <div class="card">
+      <div class="card-body text-black">
+        <!-- put stars in here somewhere for display? -->
+        <p class="card-text">{{review.comment}}</p>
+      </div>
+      <div>
+        {{#times review.stars}}
+          {{this}}
+        {{/times}}
+      </div>
+      <div class="card-footer text-muted">
+        Posted by {{review.user.username}} on {{format_date review.createdAt}}
+      </div>
+    </div>
+  </div>
+{{/each}}
+
+<script src="/js/recipe.js"
