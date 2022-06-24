@@ -58,7 +58,7 @@ In addition to UI/UX prioritization, the MVC paradigm and file structure follows
 ## [Installation](#table-of-contents)
 
 - To run the site, you can use this link which is run with Heroku: https://barcard-group13.herokuapp.com/
-- In the case that does not work please refer to the Github page repo for this project: https://github.com/heatherknoyes/BarCard
+- In the case that does not work please refer to the Github page repo for this project: https://github.com/Bungycode/BarCard
 
 ## [License](#table-of-contents)
 
@@ -81,4 +81,4 @@ To test the site click the following link: https://barcard-group13.herokuapp.com
 
 Please contact us using the following links:
 
-[GitHub](https://github.com/heatherknoyes https://github.com/heatherknoyes)
+[GitHub](https://github.com/Bungycode)
